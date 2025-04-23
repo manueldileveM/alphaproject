@@ -251,3 +251,91 @@ footer p, footer li {
   color: #333;
 }
 
+/*per bookingPage e bookingForm*/
+.booking-form {
+  display: grid;
+  max-width: 400px;
+  margin: 0 auto;
+  gap: 20px;
+  padding: 30px;
+  background-color: #EE9972;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  font-family: 'Karla', sans-serif;
+}
+
+.booking-form label {
+  font-weight: 600;
+  color: #495E57;
+  margin-bottom: 4px;
+  font-size: 1rem;
+}
+
+.booking-form input,
+.booking-form select {
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+.booking-form input:focus,
+.booking-form select:focus {
+  outline: none;
+  border-color: #495E57;
+}
+
+.booking-form input[type="submit"] {
+  background-color: #F4CE14;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+}
+
+.booking-form input[type="submit"]:hover {
+  background-color: #e3bd0f;
+}
+
+.booking-page h2, p {
+  text-align: center;
+}
+
+.booking-page h3 {
+  text-align: center;
+}
+
+/*bookingslot*/
+.slot-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.booking-slot {
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-weight: bold;
+  border: 2px solid #ccc;
+  cursor: default;
+  font-family: 'Karla', sans-serif;
+}
+
+.booking-slot.available {
+  background-color: #d1f2c4;
+  border-color: #4CAF50;
+  color: #2e7d32;
+}
+
+.booking-slot.booked {
+  background-color: #fcdede;
+  border-color: #e53935;
+  color: #b71c1c;
+  text-decoration: line-through;
+}
+
