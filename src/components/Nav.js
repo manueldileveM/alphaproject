@@ -1,13 +1,15 @@
+import { Link } from 'react-router-dom';
+
 function Nav() {
     return (
         <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#reservations">Reservations</a></li>
-                <li><a href="#order">Order Online</a></li>
-                <li><a href="#login">Login</a></li>
+            <ul className="nav-links">
+                <li><Link to="/">HOME</Link></li>
+                <li><Link to="/About">ABOUT</Link></li>
+                <li><Link to="/Menu">MENU</Link></li>
+                <li><Link to="/Reservations">RESERVATIONS</Link></li>
+                <li><Link to="/OrderOnline">ORDER ONLINE</Link></li>
+                <li><Link to="/Login">LOGIN</Link></li>
             </ul>
         </nav>
     );
