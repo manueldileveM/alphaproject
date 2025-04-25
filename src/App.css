@@ -1,5 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500&family=Markazi+Text:wght@400;700&display=swap');
 
+/* Utility classes
+.btn-yellow {
+  background-color: #F4CE14;
+  color: #333;
+  font-weight: bold;
+  border: none;
+  border-radius: 16px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-yellow:hover {
+  background-color: #e3bd0f;
+}
+
+.section-box {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 60px 20px;
+  margin: 0 auto;
+}
+
+.input-style {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.title-colored {
+  color: #495E57;
+  text-align: center;
+}*/
+
+
 /* Reset e base */
 body {
   margin: 0;
@@ -323,6 +362,7 @@ footer p, footer li {
   transition: background-color 0.3s ease;
 }
 
+
 .booking-form input[type="submit"]:hover {
   background-color: #e3bd0f;
 }
@@ -427,3 +467,87 @@ footer p, footer li {
   border-bottom: 1px solid #ddd;
 }
 
+/* 📱 Responsive layout per dispositivi mobili */
+@media (max-width: 600px) {
+  .booking-form {
+    max-width: 100%;
+    padding: 20px;
+    gap: 16px;
+    border-radius: 12px;
+  }
+
+  .booking-form input,
+  .booking-form select {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  .booking-form label {
+    font-size: 0.95rem;
+  }
+
+  .booking-form h2 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .booking-form input[type="submit"] {
+    font-size: 1rem;
+    padding: 14px;
+    width: 100%;
+  }
+
+  .booking-page {
+    padding: 40px 16px;
+    max-width: 100%;
+  }
+
+  .booking-page h2 {
+    font-size: 2rem;
+  }
+
+  .booking-page p {
+    font-size: 1rem;
+  }
+
+  .slot-list {
+    gap: 10px;
+  }
+
+  .booking-slot {
+    width: 70px;
+    padding: 8px 10px;
+    font-size: 0.9rem;
+  }
+
+  .confirmation-page {
+    padding: 40px 16px;
+    max-width: 100%;
+  }
+
+  .confirmation-page h2 {
+    font-size: 1.8rem;
+  }
+
+  .confirmation-page p {
+    font-size: 1rem;
+  }
+
+  .confirmation-page .button {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+
+  .booking-summary {
+    padding: 16px;
+    max-width: 100%;
+  }
+
+  .booking-summary h3 {
+    font-size: 1.3rem;
+  }
+
+  .booking-summary li {
+    font-size: 0.95rem;
+  }
+}
