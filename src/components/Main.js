@@ -1,46 +1,74 @@
-import React, { useReducer } from "react";
-import BookingPage from "./BookingPage";
+import React, { useReducer, useEffect, useState } from "react";
+import BookingForm from "./BookingForm";
+import BookingSlot from "./BookingSlot";
+import { initializeTimes, updateTimes, submitBooking } from "../utils/Api";
+import { useNavigate } from "react-router-dom";
 
-// In futuro: logica condizionata sulla data
-const updateTimes = (state, action) => {
-  if (action.type === "update") {
-    const selectedDate = action.date;
-    // Qui potrai usare una funzione per ottenere slot da un'API o da una logica
-    return [
-      "17:00",
-      "18:00",
-      "19:00",
-      "20:00",
-      "21:00",
-      "22:00"
-    ]; // Per ora restituisce lo stesso array
+function timesReducer(state, action) {
+  switch (action.type) {
+    case "init":
+    case "update":
+      return action.payload;
+    default:
+      return state;
   }
-  return state;
-};
-
-const initializeTimes = () => {
-  return [
-    "17:00",
-    "18:00",
-    "19:00",
-    "20:00",
-    "21:00",
-    "22:00"
-  ];
-};
+}
 
 function Main() {
-  const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes());
+  const [availableTimes, dispatch] = useReducer(timesReducer, []);
+  const [bookings, setBookings] = useState([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    async function loadTimes() {
+      const times = await initializeTimes();
+      dispatch({ type: "init", payload: times });
+    }
+    loadTimes();
+  }, []);
+
+  const submitForm = async (formData) => {
+    const result = await submitBooking(formData);
+    if (result.success !== false) {
+      setBookings((prev) => [...prev, formData]); // ✅ aggiungi nuova prenotazione
+      navigate("/booking-confirmed");
+    } else {
+      alert("Errore durante la prenotazione.");
+    }
+  };
 
   return (
-    <main>
-      <BookingPage
+    <>
+      <BookingForm
         availableTimes={availableTimes}
         dispatch={dispatch}
+        submitForm={submitForm}
       />
-    </main>
+
+      <h3>Orari disponibili</h3>
+      <div className="slot-list">
+        {Array.isArray(availableTimes) && availableTimes.map((time, index) => (
+          <BookingSlot key={index} time={time} isAvailable={true} />
+        ))}
+      </div>
+
+      {bookings.length > 0 && (
+        <div className="booking-summary">
+          <h3>Prenotazioni recenti</h3>
+          <ul>
+            {bookings.map((b, i) => (
+              <li key={i}>
+                📅 {b.date} - ⏰ {b.time} - 👥 {b.guests} ospiti ({b.occasion})
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </>
   );
 }
 
 export default Main;
+
+
 

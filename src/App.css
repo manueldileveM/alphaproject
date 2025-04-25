@@ -264,78 +264,166 @@ footer p, footer li {
   font-family: 'Karla', sans-serif;
 }
 
-.booking-form label {
-  font-weight: 600;
+/* BOOKING PAGE LAYOUT */
+.booking-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.booking-page h2 {
+  font-size: 2.5rem;
   color: #495E57;
-  margin-bottom: 4px;
-  font-size: 1rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.booking-page p {
+  font-size: 1.125rem;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.booking-page h3 {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 1.5rem;
+  color: #495E57;
+}
+
+/* FORM STYLING */
+
+.booking-form label {
+  font-weight: bold;
 }
 
 .booking-form input,
 .booking-form select {
-  padding: 10px 14px;
+  padding: 10px;
+  border-radius: 8px;
   border: 1px solid #ccc;
-  border-radius: 12px;
   font-size: 1rem;
-  font-family: inherit;
-  transition: border-color 0.3s ease;
 }
 
-.booking-form input:focus,
-.booking-form select:focus {
-  outline: none;
-  border-color: #495E57;
-}
-
+/* SUBMIT BUTTON CENTRATO */
 .booking-form input[type="submit"] {
   background-color: #F4CE14;
   color: #333;
   font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
   border: none;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
 }
 
 .booking-form input[type="submit"]:hover {
   background-color: #e3bd0f;
 }
 
-.booking-page h2, p {
-  text-align: center;
-}
-
-.booking-page h3 {
-  text-align: center;
-}
-
-/*bookingslot*/
+/* SLOT LIST E QUADRATINI */
 .slot-list {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 20px;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 30px;
 }
 
 .booking-slot {
-  padding: 10px 16px;
-  border-radius: 12px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  text-align: center;
   font-weight: bold;
-  border: 2px solid #ccc;
-  cursor: default;
-  font-family: 'Karla', sans-serif;
+  width: 80px;
 }
 
 .booking-slot.available {
-  background-color: #d1f2c4;
-  border-color: #4CAF50;
-  color: #2e7d32;
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
 }
 
+
 .booking-slot.booked {
-  background-color: #fcdede;
-  border-color: #e53935;
-  color: #b71c1c;
-  text-decoration: line-through;
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* PAGINA DI CONFERMA */
+.confirmation-page {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #fefae0;
+  border-radius: 16px;
+  margin: 40px auto;
+  max-width: 600px;
+  font-family: 'Karla', sans-serif;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.confirmation-page h2 {
+  color: #4CAF50;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.confirmation-page p {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.confirmation-page .button {
+  background-color: #F4CE14;
+  color: #333;
+  padding: 12px 24px;
+  font-weight: bold;
+  border: none;
+  border-radius: 16px;
+  text-decoration: none;
+  font-size: 1rem;
+  display: inline-block;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.confirmation-page .button:hover {
+  background-color: #e3bd0f;
+}
+
+.booking-summary {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #fefae0;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.booking-summary h3 {
+  text-align: center;
+  color: #495E57;
+  margin-bottom: 10px;
+}
+
+.booking-summary ul {
+  list-style: none;
+  padding: 0;
+}
+
+.booking-summary li {
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
 }
 
