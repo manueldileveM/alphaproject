@@ -1,17 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import './index.css'; // o './App.css' se usi quello per gli stili globali
-import { BrowserRouter } from 'react-router-dom';
-import reportWebVitals from './reportWebVitals';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { HashRouter } from 'react-router-dom' // ← CAMBIA QUI
+import App from './App'
+import './index.css'
+import reportWebVitals from './reportWebVitals'
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter>
+      {' '}
+      {/* ← CAMBIA QUI */}
       <App />
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>
-);
+)
 
-reportWebVitals();
+reportWebVitals()
