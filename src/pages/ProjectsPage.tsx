@@ -16,8 +16,8 @@ export default function ProjectsPage() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          pl: 2,
-          pr: 2
+          pr: 2,
+          pl: 2
         }}
       >
         <Typography sx={sx.TextStyle}>I MIEI PROGETTI</Typography>
