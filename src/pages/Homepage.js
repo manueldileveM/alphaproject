@@ -1,23 +1,17 @@
-import React from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import CallToAction from "../components/CallToAction";
-import Specials from "../components/Specials";
-import Testimonianze from "../components/Testimonianze";
-import InfoRestaurant from "../components/InfoRestaurant";
+import { Box } from '@mui/material'
+import CallToAction from '../components/CallToAction.tsx'
+import Header from '../components/Header.tsx'
+import Specials from '../components/Specials.tsx'
+import { colors } from '../libreria/MainLibrary.tsx'
 
 function Homepage() {
   return (
-    <>
+    <Box sx={{ background: colors.background }}>
       <Header />
       <CallToAction />
       <Specials />
-      <Testimonianze />
-      <InfoRestaurant />
-      <Footer />
-    </>
-  );
+    </Box>
+  )
 }
 
-export default Homepage;
-
+export default Homepage
