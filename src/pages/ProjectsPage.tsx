@@ -38,17 +38,17 @@ export default function ProjectsPage() {
           </Typography>
           <Box
             component="img"
-            src="/svg/ButtonRedImg.png"
+            src="svg/ButtonRedImg.png"
             sx={sx.BoxProgettiButtons}
           />
           <Box
             component="img"
-            src="/svg/ButtonYellowImg.png"
+            src="svg/ButtonYellowImg.png"
             sx={sx.BoxProgettiButtons}
           />
           <Box
             component="img"
-            src="/svg/TaskGNC.png"
+            src="svg/TaskGNC.png"
             sx={sx.BoxProgettiButtons}
           />
         </Box>
@@ -64,9 +64,9 @@ export default function ProjectsPage() {
           <Typography sx={sx.TextStyle}>
             WEBSITES CREATI SU RICHIESTA
           </Typography>
-          <Box component="img" src="/svg/GreenWebsite.png" sx={sx.WebSites} />
-          <Box component="img" src="/svg/FoodWebsite.png" sx={sx.WebSites} />
-          <Box component="img" src="/svg/SpaceWebsite.png" sx={sx.WebSites} />
+          <Box component="img" src="svg/GreenWebsite.png" sx={sx.WebSites} />
+          <Box component="img" src="svg/FoodWebsite.png" sx={sx.WebSites} />
+          <Box component="img" src="svg/SpaceWebsite.png" sx={sx.WebSites} />
         </Box>
       </Box>
     </Box>

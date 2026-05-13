@@ -30,7 +30,7 @@ export default function CallToAction() {
         <Box sx={sx.informationBox}>
           <Box
             component="img"
-            src="/svg/fotoProfilo.png"
+            src="svg/fotoProfilo.png"
             sx={{ width: '50%', height: '50%', objectFit: 'cover' }}
           />
           <Typography
@@ -138,7 +138,7 @@ export default function CallToAction() {
         </Box>
       </Box>
       <ButtonBlue
-        onClick={() => window.open('/pdf/CourseraCertificato.pdf', '_blank')}
+        onClick={() => window.open('pdf/CourseraCertificato.pdf', '_blank')}
       >
         CERTIFICATO
       </ButtonBlue>
