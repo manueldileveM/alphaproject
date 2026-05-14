@@ -29,6 +29,7 @@ export default function Specials() {
         minHeight: '100vh'
       }}
     >
+      <ButtonBlue to="/progetti">I MIEI PROGETTI</ButtonBlue>
       <Box
         sx={{
           width: {
@@ -83,7 +84,6 @@ export default function Specials() {
           ))}
         </Box>
       </Box>
-      <ButtonBlue to="/progetti">I MIEI PROGETTI</ButtonBlue>
     </Box>
   )
 }

@@ -2,6 +2,7 @@ import { Box, Typography } from '@mui/material'
 import { colors, fontFamily } from '../libreria/MainLibrary.tsx'
 
 import useCallToActionSx from '../style/useCallToActionSx.ts'
+import ArrowDown from '../widget/ArrowDown.tsx'
 import ButtonBlue from '../widget/ButtonBlue.tsx'
 
 export default function CallToAction() {
@@ -30,7 +31,7 @@ export default function CallToAction() {
         <Box sx={sx.informationBox}>
           <Box
             component="img"
-            src="svg/fotoProfilo.png"
+            src="/alphaproject/svg/fotoProfilo.png"
             sx={{ width: '50%', height: '50%', objectFit: 'cover' }}
           />
           <Typography
@@ -128,20 +129,36 @@ export default function CallToAction() {
               lineHeight: '20px'
             }}
           >
-            Ciao ! Sono un frontend developer con certificazione professionale
-            ottenuta tra Coursera e con un'esperienza in un ambiente startup e
-            su alcuni progetti alla quale ho lavorato. Mi occupo di sviluppare
-            applicazioni veloci, affidabili e scalabili utilizzando React e
-            TypeScript. Mi piace lavorare su problemi complessi, costruire
-            architetture pulite e rilasciare funzionalità in modo efficiente.
+            Ciao ! Sono un frontend developer con una certificazione
+            professionale ottenuta tramite Coursera. Ho maturato esperienza in
+            ambiente startup e lavorando a diversi progetti. Mi occupo di
+            sviluppare applicazioni veloci, affidabili e scalabili utilizzando
+            React e TypeScript. Mi piace lavorare su problemi complessi,
+            costruire architetture pulite e rilasciare funzionalità in modo
+            efficiente.
           </Typography>
         </Box>
       </Box>
-      <ButtonBlue
-        onClick={() => window.open('pdf/CourseraCertificato.pdf', '_blank')}
+      <Box
+        sx={{
+          position: 'relative',
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'center'
+        }}
       >
-        CERTIFICATO
-      </ButtonBlue>
+        <ButtonBlue
+          onClick={() =>
+            window.open('/alphaproject/pdf/CourseraCertificato.pdf', '_blank')
+          }
+        >
+          CERTIFICATO
+        </ButtonBlue>
+
+        <Box sx={{ position: 'absolute', right: 40 }}>
+          <ArrowDown />
+        </Box>
+      </Box>
     </Box>
   )
 }

@@ -1,14 +1,20 @@
-import { Button, Typography } from '@mui/material'
+import { Button, ButtonProps, Typography } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 import { colors, fontFamily } from '../libreria/MainLibrary.tsx'
 
-interface ButtonBlueProps {
+interface ButtonBlueProps extends ButtonProps {
   children: string
   onClick?: () => void
   to?: string
 }
 
-export default function ButtonBlue({ children, onClick, to }: ButtonBlueProps) {
+export default function ButtonBlue({
+  children,
+  onClick,
+  to,
+  sx,
+  ...props
+}: ButtonBlueProps) {
   const navigate = useNavigate()
 
   const handleClick = () => {
@@ -22,6 +28,7 @@ export default function ButtonBlue({ children, onClick, to }: ButtonBlueProps) {
   return (
     <Button
       onClick={handleClick}
+      {...props}
       sx={{
         width: {
           xs: '80%',
@@ -36,7 +43,8 @@ export default function ButtonBlue({ children, onClick, to }: ButtonBlueProps) {
 
         '&:hover': {
           background: colors.buttonStyle.hover
-        }
+        },
+        ...sx
       }}
     >
       <Typography
