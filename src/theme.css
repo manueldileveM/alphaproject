@@ -1,0 +1,27 @@
+:root {
+  --color-background: #0b0f14;
+  --color-background-due: #111820;
+  --color-header: #080c11;
+  --color-card: #151c24;
+  --color-card-hover: #1b2530;
+  --color-text: #f5f7fa;
+  --color-text-secondary: #a7b0bc;
+  --color-primary: #4f8cff;
+  --color-accent-hover: #6ba1ff;
+  --color-border: #25303c;
+  --color-success: #35d07f;
+}
+
+:root[data-theme='light'] {
+  --color-background: #faf7f2;
+  --color-background-due: #ffffff;
+  --color-header: #ffffff;
+  --color-card: #ffffff;
+  --color-card-hover: #f2ece4;
+  --color-text: #3e2f1c;
+  --color-text-secondary: #7a6a55;
+  --color-primary: #a67c52;
+  --color-accent-hover: #8c6239;
+  --color-border: #e3d9cc;
+  --color-success: #4caf50;
+}

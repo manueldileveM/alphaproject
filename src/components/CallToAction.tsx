@@ -1,164 +1,177 @@
 import { Box, Typography } from '@mui/material'
-import { colors, fontFamily } from '../libreria/MainLibrary.tsx'
-
-import useCallToActionSx from '../style/useCallToActionSx.ts'
-import ArrowDown from '../widget/ArrowDown.tsx'
+import Grid from '@mui/material/Grid'
+import { fontFamily, themeColors } from '../libreria/MainLibrary.tsx'
 import ButtonBlue from '../widget/ButtonBlue.tsx'
 
 export default function CallToAction() {
-  const sx = useCallToActionSx()
   return (
-    <Box
+    <Grid
+      id="home"
+      container
       sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        width: '100%'
+        background: themeColors.background,
+        minHeight: 'auto',
+        cursor: 'default'
       }}
     >
-      <Box
-        sx={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'flex-start',
-          //background: 'red',
-          px: '5vw',
-          mt: '8vh',
-          gap: '5vw',
-          flexWrap: 'wrap'
-        }}
-      >
-        <Box sx={sx.informationBox}>
-          <Box
-            component="img"
-            src="/alphaproject/svg/fotoProfilo.png"
-            sx={{ width: '50%', height: '50%', objectFit: 'cover' }}
-          />
+      <Grid item xs={12} md={6} sx={{ height: '100%' }}>
+        <Box
+          sx={{
+            display: 'flex',
+            height: '100%',
+            backgroundColor: themeColors.background,
+            width: '100%',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: 7
+          }}
+        >
           <Typography
             sx={{
-              color: colors.secondaryText,
-              fontSize: '20px', //NO RESPONSIVE
+              fontSize: {
+                xs: '30px',
+                md: '40px'
+              },
+              lineHeight: 1.2,
+              fontFamily: fontFamily.mainText,
               fontWeight: 'bold',
-              fontFamily: fontFamily.mainText
+              mt: 5,
+              color: themeColors.primary,
+              textAlign: 'center'
             }}
           >
-            MANUEL DI LEVE
-          </Typography>
-          <Typography
-            sx={{
-              color: 'white',
-              fontSize: '14px',
-              lineHeight: '12px',
-              fontFamily: fontFamily.mainText
-            }}
-          >
-            Sviluppatore Frontend
+            FRONTEND DEVELOPER
           </Typography>
           <Box
             sx={{
               display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
               width: '100%',
-              gap: 2,
-              pt: 3,
-              px: 2
+              flexDirection: 'column',
+              gap: 0,
+              alignItems: 'center',
+              justifyContent: 'center'
             }}
           >
             <Typography
               sx={{
-                color: 'white',
-                fontSize: '18px',
-                lineHeight: '12px',
-                fontFamily: fontFamily.mainText
+                fontSize: '20px',
+                lineHeight: '30px',
+                fontWeight: 'bold',
+                color: themeColors.textSecondary
               }}
             >
-              +39 3279499814
+              Ciao, sono Manuel.
             </Typography>
             <Typography
               sx={{
-                color: 'white',
-                fontSize: '18px',
-                lineHeight: '12px',
-                wordBreak: 'break-word',
-                textAlign: 'center',
-                fontFamily: fontFamily.mainText
+                fontSize: '20px',
+                lineHeight: '30px',
+                fontWeight: 'bold',
+                color: themeColors.textSecondary
               }}
             >
-              manueldileveM@gmail.com
+              Creo interfacce
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: '20px',
+                lineHeight: '30px',
+                fontWeight: 'bold',
+                color: themeColors.primary
+              }}
+            >
+              moderne e funzionali.
             </Typography>
           </Box>
-        </Box>
-
-        <Box sx={sx.descriptionBox}>
           <Typography
             sx={{
-              color: colors.mainBlueText,
+              fontSize: '20px',
+              lineHeight: '30px',
               fontFamily: fontFamily.mainText,
-              fontSize: '14px',
-              pl: 2,
-              pt: 2,
-              lineHeight: '20px'
-            }}
-          >
-            About Me!
-          </Typography>
-          <Typography
-            sx={{
-              color: colors.secondaryText,
-              fontFamily: fontFamily.mainText,
-              fontSize: '40px',
               fontWeight: 'bold',
-              pl: 2,
-              //pt: 2,
-              lineHeight: '40px'
+              color: themeColors.primary,
+              maxWidth: '300px',
+              textAlign: 'center',
+              mx: 'auto'
             }}
           >
-            SVILUPPATORE WEB
-            <br />
-            FRONTEND
+            Sviluppatore frontend specializzato in React e TypeScript, con
+            attenzione alla qualità del codice, alle interfacce responsive e
+            alla creazione di componenti riutilizzabili.
           </Typography>
-          <Typography
+          <Box
             sx={{
-              color: 'white',
-              fontFamily: fontFamily.mainText,
-              fontSize: '14px',
-              pl: 2,
-              pr: 2,
-              lineHeight: '20px'
+              display: 'flex',
+              flexDirection: 'row',
+              gap: { xs: 2, md: 5 }
             }}
           >
-            Ciao ! Sono un frontend developer con una certificazione
-            professionale ottenuta tramite Coursera. Ho maturato esperienza in
-            ambiente startup e lavorando a diversi progetti. Mi occupo di
-            sviluppare applicazioni veloci, affidabili e scalabili utilizzando
-            React e TypeScript. Mi piace lavorare su problemi complessi,
-            costruire architetture pulite e rilasciare funzionalità in modo
-            efficiente.
-          </Typography>
+            <ButtonBlue
+              children="Progetti"
+              backgroundColor={themeColors.primary}
+              textColor="#FFFFFF"
+              hoverColor={themeColors.accentHover}
+              onClick={() => {
+                document.getElementById('projects')?.scrollIntoView({
+                  behavior: 'smooth'
+                })
+              }}
+              widthXs="170px"
+            />
+            <ButtonBlue
+              children="Contatti"
+              backgroundColor="transparent"
+              border={true}
+              textColor={themeColors.text}
+              hoverColor={themeColors.card}
+              onClick={() => {
+                document.getElementById('contact')?.scrollIntoView({
+                  behavior: 'smooth'
+                })
+              }}
+              widthXs="170px"
+            />
+          </Box>
         </Box>
-      </Box>
-      <Box
-        sx={{
-          position: 'relative',
-          width: '100%',
-          display: 'flex',
-          justifyContent: 'center'
-        }}
-      >
-        <ButtonBlue
-          onClick={() =>
-            window.open('/alphaproject/pdf/CourseraCertificato.pdf', '_blank')
-          }
-        >
-          CERTIFICATO
-        </ButtonBlue>
+      </Grid>
 
-        <Box sx={{ position: 'absolute', right: 40 }}>
-          <ArrowDown />
+      <Grid item xs={12} md={6} sx={{ height: '100%' }}>
+        <Box
+          sx={{
+            height: '100%',
+            backgroundColor: themeColors.background,
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}
+        >
+          <Box
+            sx={{
+              width: '360px',
+              height: '360px',
+              padding: '20px',
+              borderRadius: '32px',
+              border: `1px solid ${themeColors.border}`,
+              backgroundColor: themeColors.card,
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              mt: 10
+            }}
+          >
+            <Box
+              component="img"
+              src="/alphaproject/svg/fotoProfilo.png"
+              sx={{
+                width: '50%',
+                height: '100%',
+                objectFit: 'cover'
+              }}
+            />
+          </Box>
         </Box>
-      </Box>
-    </Box>
+      </Grid>
+    </Grid>
   )
 }

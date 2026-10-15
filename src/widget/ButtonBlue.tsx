@@ -1,11 +1,16 @@
 import { Button, ButtonProps, Typography } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
-import { colors, fontFamily } from '../libreria/MainLibrary.tsx'
+import { fontFamily, themeColors } from '../libreria/MainLibrary.tsx'
 
 interface ButtonBlueProps extends ButtonProps {
   children: string
   onClick?: () => void
   to?: string
+  backgroundColor: string
+  hoverColor: string
+  textColor: string
+  border?: boolean
+  widthXs: string
 }
 
 export default function ButtonBlue({
@@ -13,6 +18,11 @@ export default function ButtonBlue({
   onClick,
   to,
   sx,
+  backgroundColor,
+  hoverColor,
+  textColor,
+  border,
+  widthXs,
   ...props
 }: ButtonBlueProps) {
   const navigate = useNavigate()
@@ -27,29 +37,32 @@ export default function ButtonBlue({
 
   return (
     <Button
+      disableRipple
       onClick={handleClick}
       {...props}
       sx={{
         width: {
-          xs: '80%',
-          sm: '300px'
+          xs: widthXs,
+          sm: '200px'
         },
-        height: '48px',
-        background: colors.buttonStyle.default,
-        borderRadius: '12px',
+        height: '42px',
+        background: backgroundColor,
+        border: border ? `2px solid ${themeColors.border}` : 0,
+        borderRadius: '20px',
         fontFamily: fontFamily.mainText,
         fontWeight: 'bold',
         textTransform: 'none',
 
         '&:hover': {
-          background: colors.buttonStyle.hover
+          backgroundColor: hoverColor,
+          boxShadow: 'none'
         },
         ...sx
       }}
     >
       <Typography
         sx={{
-          color: colors.buttonStyle.text,
+          color: textColor,
           fontFamily: fontFamily.mainText,
           fontWeight: 'bold',
           lineHeight: '20px'

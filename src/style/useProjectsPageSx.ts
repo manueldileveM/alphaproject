@@ -1,39 +1,54 @@
-import { colors, fontFamily } from '../libreria/MainLibrary.tsx'
+import { fontFamily, themeColors } from '../libreria/MainLibrary.tsx'
 import { sx } from '../utils/mui.utils.ts'
 
 export default function useCallToActionSx() {
   return {
     BoxProgettiButtons: sx({
-      borderRadius: '15px',
-      border: `0.5vh solid ${colors.borderProjects}`,
-      minWidth: '488px',
-      minHeight: '100px',
+      display: 'block',
       width: '100%',
+      maxWidth: '488px',
       height: 'auto',
-      maxWidth: '100%',
-      maxHeight: 'auto'
+      borderRadius: '15px',
+      border: `1px solid ${themeColors.border}`,
+      boxSizing: 'border-box',
+      transition: 'transform 0.25s ease',
+
+      '&:hover': {
+        transform: 'translateY(-4px)'
+      }
     }),
 
     WebSites: sx({
-      width: '20%',
-      height: '20%',
+      display: 'block',
+      width: '100%',
+      maxWidth: '600px',
+      height: 'auto',
+      objectFit: 'contain',
       borderRadius: '15px',
-      border: `0.5vh solid ${colors.borderProjects}`
+      border: `1px solid ${themeColors.border}`,
+      boxSizing: 'border-box',
+      transition: 'transform 0.25s ease',
+
+      '&:hover': {
+        transform: 'translateY(-4px)'
+      }
     }),
 
     FullPage: sx({
       display: 'flex',
       flexDirection: 'column',
-      background: colors.background,
       alignItems: 'center',
       justifyContent: 'flex-start',
-      gap: 2,
+      gap: 4,
       width: '100%',
-      minHeight: '100vh'
+      minHeight: '100vh',
+      paddingBottom: 6,
+      paddingTop: '70px',
+      background: themeColors.background
     }),
 
     TextStyle: sx({
-      color: colors.secondaryText,
+      color: themeColors.textSecondary,
       fontSize: 'clamp(16px, 2vw, 48px)',
       fontFamily: fontFamily
     })
